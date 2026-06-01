@@ -1,0 +1,7 @@
+_build/
+**/*.agdai
+exports/
+audit/
+dist/
+.DS_Store
+Thumbs.db
