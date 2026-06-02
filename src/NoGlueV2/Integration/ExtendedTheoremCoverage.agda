@@ -81,6 +81,21 @@ actualConditionalBoundaryNonDerivabilityCoverage = record
   { impossible = conditionalBoundaryNonDerivability
   }
 
+record Assumption3EliminationCoverage : Set1 where
+  field
+    boundaryBNR :
+      BoundaryEq boundaryH boundaryA ->
+      ⊥
+    liftedBNR :
+      BoundaryIotaEq ->
+      ⊥
+actualAssumption3EliminationCoverage :
+  Assumption3EliminationCoverage
+actualAssumption3EliminationCoverage = record
+  { boundaryBNR = boundaryNonRegular
+  ; liftedBNR = conditionalBoundaryNonDerivability
+  }
+
 record ConstantFamilySpecializationCoverage : Set2 where
   field
     transportApp :
@@ -165,6 +180,8 @@ record ExtendedTheoremCoverage : Set3 where
     boundaryNonRegularityCoverage : BoundaryNonRegularityCoverage
     conditionalBoundaryNonDerivabilityCoverage :
       ConditionalBoundaryNonDerivabilityCoverage
+    assumption3EliminationCoverage :
+      Assumption3EliminationCoverage
     constantFamilySpecializationCoverage :
       ConstantFamilySpecializationCoverage
     piCongruenceCoverage : PiCongruenceCoverage
@@ -177,6 +194,8 @@ actualExtendedTheoremCoverage = record
   ; boundaryNonRegularityCoverage = actualBoundaryNonRegularityCoverage
   ; conditionalBoundaryNonDerivabilityCoverage =
       actualConditionalBoundaryNonDerivabilityCoverage
+  ; assumption3EliminationCoverage =
+      actualAssumption3EliminationCoverage
   ; constantFamilySpecializationCoverage =
       actualConstantFamilySpecializationCoverage
   ; piCongruenceCoverage = actualPiCongruenceCoverage

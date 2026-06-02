@@ -12,3 +12,4 @@ record PathPKanCore (R : RawTarget) : Set1 where
     coeCore : PathPCoeCore R
     fillCore : PathPFillCore R
     hcomCore : PathPHComCore R
+

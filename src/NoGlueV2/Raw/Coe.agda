@@ -74,3 +74,4 @@ derivedRaw2DCoe {R} C code = record
   ; coe2-cong = λ s t t' eq ->
       RawDependentCoe.coe-cong C (Raw2DFamilyCode.A2Code code s) t t' eq
   }
+

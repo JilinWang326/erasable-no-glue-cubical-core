@@ -30,3 +30,4 @@ pathPCoeIdentityExample :
     (pathPApp (pathPCoeTermFromTerm P (pathPCoeIdInput P F p)) s)
     (pathPApp p s)
 pathPCoeIdentityExample = pathPCoeIdApp
+

@@ -15,3 +15,4 @@ linewiseCoeExample :
   EndpointStability R C E t t' ->
   PathLineAt R C E t'
 linewiseCoeExample = transportPathLine
+

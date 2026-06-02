@@ -59,3 +59,13 @@ open import NoGlueV2.Examples.PathPFillBoundaryExample
 open import NoGlueV2.Examples.SourceTaggedGrammarExample
 open import NoGlueV2.Examples.EqualitySoundnessExample
 open import NoGlueV2.Examples.ActualNoGlueCoreExample
+
+smokeAssumption3Eliminated :
+  BoundaryEq boundaryH boundaryA ->
+  ⊥
+smokeAssumption3Eliminated = Assumption3Eliminated
+
+smokeLiftedBoundaryNonDerivability :
+  BoundaryIotaEq ->
+  ⊥
+smokeLiftedBoundaryNonDerivability = LiftedBoundaryNonDerivability

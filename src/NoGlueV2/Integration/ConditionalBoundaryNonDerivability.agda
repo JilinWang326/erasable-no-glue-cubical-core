@@ -107,3 +107,8 @@ conditionalBoundaryNonDerivability :
   ⊥
 conditionalBoundaryNonDerivability e =
   boundaryNonRegular (boundaryIotaEqReflected e)
+
+liftedBoundaryNonDerivability :
+  BoundaryIotaEq ->
+  ⊥
+liftedBoundaryNonDerivability = conditionalBoundaryNonDerivability

@@ -1,7 +1,7 @@
 {-# OPTIONS --cubical=no-glue --safe #-}
 module NoGlueCubicalCore.MainTheorem where
 
-open import NoGlueV2.Prelude public using (One)
+open import NoGlueV2.Prelude public using (One; ⊥)
 open import NoGlueV2.Raw.Target public using (RawTarget)
 open import NoGlueV2.Syntax.Rule public using (Grammar; Deriv; SameShape)
 open import NoGlueV2.Integration.DisplayedCertificates public using (TermSoundness)
@@ -20,7 +20,26 @@ open import NoGlueV2.Integration.ReflectionBoundary public
 open import NoGlueV2.Integration.ComputationSummary public
   using (ComputationSummary; SpecializationSummary)
 open import NoGlueV2.Integration.ExtendedTheoremCoverage public
-  using (ExtendedTheoremCoverage; actualExtendedTheoremCoverage)
+  using
+    ( ExtendedTheoremCoverage
+    ; actualExtendedTheoremCoverage
+    ; Assumption3EliminationCoverage
+    ; actualAssumption3EliminationCoverage
+    )
+open import NoGlueV2.Boundary.NonRegularity public
+  using
+    ( BoundaryTerm
+    ; boundaryH
+    ; boundaryA
+    ; BoundaryEq
+    ; boundaryNonRegular
+    )
+open import NoGlueV2.Integration.ConditionalBoundaryNonDerivability public
+  using
+    ( BoundaryIotaEq
+    ; conditionalBoundaryNonDerivability
+    ; liftedBoundaryNonDerivability
+    )
 open import NoGlueV2.Integration.ActualGrammar public
   using (ActualGrammar; ActualJudg; ActualRule)
 open import NoGlueV2.Integration.ActualTermSoundness public
@@ -91,6 +110,16 @@ GngSpecializationSummary = actualSpecializationSummary
 
 UnifiedPresentation : ExtendedTheoremCoverage
 UnifiedPresentation = actualExtendedTheoremCoverage
+
+Assumption3Eliminated :
+  BoundaryEq boundaryH boundaryA ->
+  ⊥
+Assumption3Eliminated = boundaryNonRegular
+
+LiftedBoundaryNonDerivability :
+  BoundaryIotaEq ->
+  ⊥
+LiftedBoundaryNonDerivability = conditionalBoundaryNonDerivability
 
 Excluded : Set
 Excluded = One
