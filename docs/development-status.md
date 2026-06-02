@@ -8,7 +8,6 @@ namespace for this cleanup pass. This keeps the typechecked mathematical
 development stable while providing the public `NoGlueCubicalCore` entry points
 expected by the note.
 
-The release check script scans all Agda sources under `src` and `tests` for
-holes, postulates, unsafe termination pragmas, trust escapes, incomplete-match
-flags, incomplete-meta flags, and publication cleanup markers before
-typechecking the public theorem module, public index module, and smoke test.
+The repository is intended to be checked through the direct Agda entry points
+listed in the README: the public theorem module, the public index module, and
+the smoke-load module.

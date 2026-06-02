@@ -22,14 +22,22 @@ coreng : ErasableNoGlueCore
 Requirements:
 
 - Agda 2.9 with support for `--cubical=no-glue`
-- either the local no-glue wrapper at
-  `C:\Users\24539\Agda\toolchains\agda-no-glue\agda-no-glue.cmd`, or a
-  compatible Agda executable supplied through `$env:AGDA`
 
-Check the release surface and smoke test with:
+From the repository root, check the public theorem and smoke-load entry point
+directly with Agda:
 
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\check.ps1
+```sh
+agda -i src -i tests src/NoGlueCubicalCore/MainTheorem.agda
+agda -i src -i tests src/NoGlueCubicalCore/Index.agda
+agda -i src -i tests tests/Smoke/LoadEverything.agda
+```
+
+The main theorem is exposed at:
+
+```agda
+src/NoGlueCubicalCore/MainTheorem.agda
+
+coreng : ErasableNoGlueCore
 ```
 
 ## Layout
